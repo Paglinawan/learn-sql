@@ -1,20 +1,15 @@
 -- table
 
 -- delete table
-drop table if exists posts;
+drop table if exists users;
 
-CREATE table posts(
+CREATE table users(
   id integer primary key,
-  title text,
-  body text
+  name text not null,
+  score integer default 40 check (score >= 0),
+  email text unique
 );
 
--- insert records
-insert into posts (title, body) values ('title1', 'body1');
-insert into posts (id, title, body) values (null, 'title2', 'body2');
-insert into posts (title, body) values ('title3', 'it''s body3');
-insert into posts (title, body) values ('title3', 'body
-5');
 
 -- show all records
-select * from posts;
+select * from users;
