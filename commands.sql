@@ -9,14 +9,12 @@ CREATE table posts(
   body text
 );
 
--- rename table
-alter table posts rename to articles;
+-- insert records
+insert into posts (title, body) values ('title1', 'body1');
+insert into posts (id, title, body) values (null, 'title2', 'body2');
+insert into posts (title, body) values ('title3', 'it''s body3');
+insert into posts (title, body) values ('title3', 'body
+5');
 
--- list tables
-.tables
-
--- add column
-alter table articles add column email text;
-
--- table structure
-.schema
+-- show all records
+select * from posts;
