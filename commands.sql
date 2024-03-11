@@ -1,8 +1,8 @@
 -- table
 CREATE table if not exists posts(
-  id,
-  title,
-  body
+  id integer primary key,
+  title text,
+  body text
 );
 
 -- list tables
