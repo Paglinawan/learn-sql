@@ -12,7 +12,5 @@ insert into users (name, score) values ('Ysha', 54);
 insert into users (name, score) values ('Ember', 40);
 insert into users (name, score) values ('Luna', null);
 
-select * from users where score > 60;
-select * from users where score between 50 and 75;
-select * from users where name in ('Miho', 'Ysha');
-select * from users where score is null;
+select * from users where name like 'J____';
+select * from users where name like '%h%';
