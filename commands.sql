@@ -10,21 +10,9 @@ insert into users (name, score) values ('Judith', 95);
 insert into users (name, score) values ('Jolly', 72);
 insert into users (name, score) values ('Ysha', 54);
 insert into users (name, score) values ('Ember', 40);
+insert into users (name, score) values ('Luna', null);
 
--- select * from users;
-
-.headers on
--- select id, name from users;
--- select id, name as user_name from users;
-
--- .mode line
--- select * from users;
-
-.mode csv
-select * from users;
-
-.mode html
-select * from users;
-
-.mode column
-select * from users;
+select * from users where score > 60;
+select * from users where score between 50 and 75;
+select * from users where name in ('Miho', 'Ysha');
+select * from users where score is null;
