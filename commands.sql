@@ -12,4 +12,10 @@ insert into users (name, score) values ('Ysha', 54);
 insert into users (name, score) values ('Ember', 40);
 insert into users (name, score) values ('Luna', null);
 
-select * from users where score is not null order by score desc limit 3 offset 2;
+-- view
+-- create view hiscore as select * from users order by score desc limit 5;
+
+-- select * from hiscore;
+
+drop view if exists hiscore;
+.tables
