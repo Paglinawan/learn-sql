@@ -16,12 +16,6 @@ insert into users (name, score, country) values ('Luna', null, 'Japan');
 .headers on
 .mode column
 
--- case
-select
-  id, name, score,
-  case
-    when score > 70 then 'A'
-    when score > 50 then 'B'
-    else 'C'
-  end as rank
-from users;
+-- update
+update users set score = 0, name = '*' || name where score < 60;
+select * from users;
