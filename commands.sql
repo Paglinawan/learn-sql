@@ -12,10 +12,6 @@ insert into users (name, score) values ('Ysha', 54);
 insert into users (name, score) values ('Ember', 40);
 insert into users (name, score) values ('Luna', null);
 
--- view
--- create view hiscore as select * from users order by score desc limit 5;
-
--- select * from hiscore;
-
-drop view if exists hiscore;
-.tables
+.headers on
+.mode column
+select id, 'Name: ' || name as name, score - 10 as new_score from users;
