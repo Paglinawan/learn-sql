@@ -14,4 +14,10 @@ insert into users (name, score) values ('Luna', null);
 
 .headers on
 .mode column
-select id, 'Name: ' || name as name, score - 10 as new_score from users;
+
+-- select count(id), max(score), min(score), avg(score) from users;
+-- select name, length(name), upper(name), substr(name, 2, 3) from users limit 3;
+
+-- select last_insert_rowid();
+
+select * from users order by random() limit 1;
