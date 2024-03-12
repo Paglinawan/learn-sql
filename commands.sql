@@ -2,22 +2,18 @@ drop table if exists users;
 CREATE table users (
   id integer primary key,
   name text,
-  score integer
+  score integer,
+  country text
 );
 
-insert into users (name, score) values ('Miho', 65);
-insert into users (name, score) values ('Judith', 95);
-insert into users (name, score) values ('Jolly', 72);
-insert into users (name, score) values ('Ysha', 54);
-insert into users (name, score) values ('Ember', 40);
-insert into users (name, score) values ('Luna', null);
+insert into users (name, score, country) values ('Miho', 65, 'Japan');
+insert into users (name, score, country) values ('Judith', 95, 'Japan');
+insert into users (name, score, country) values ('Jolly', 72, 'Cebu');
+insert into users (name, score, country) values ('Ysha', 54, 'Cebu');
+insert into users (name, score, country) values ('Ember', 40, 'Cebu');
+insert into users (name, score, country) values ('Luna', null, 'Japan');
 
 .headers on
 .mode column
 
--- select count(id), max(score), min(score), avg(score) from users;
--- select name, length(name), upper(name), substr(name, 2, 3) from users limit 3;
-
--- select last_insert_rowid();
-
-select * from users order by random() limit 1;
+select country, avg(score) from users group by country having avg(score) > 60;
