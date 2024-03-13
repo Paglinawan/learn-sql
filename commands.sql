@@ -16,6 +16,11 @@ insert into users (name, score, country) values ('Luna', null, 'Japan');
 .headers on
 .mode column
 
--- update
-update users set score = 0, name = '*' || name where score < 60;
+-- transaction
+begin transaction;
+update users set score = score + 10 where name = 'Miho';
+update users set score = score + 10 where name = 'Ysha';
+-- commit;
+rollback;
+
 select * from users;
